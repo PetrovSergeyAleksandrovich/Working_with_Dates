@@ -1,4 +1,5 @@
 C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-debug-visual-studio/CMakeFiles/Working_with_Dates.dir
 C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
 C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-debug-visual-studio/CMakeFiles/task_1.dir
+C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-debug-visual-studio/CMakeFiles/task_2.dir
 C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir

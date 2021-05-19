@@ -139,6 +139,19 @@ task_1\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_1.dir\build
 .PHONY : task_1\fast
 
+#=============================================================================
+# Target rules for targets named task_2
+
+# Build rule for target.
+task_2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) task_2
+.PHONY : task_2
+
+# fast build rule for target.
+task_2\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_2.dir\build
+.PHONY : task_2\fast
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -193,6 +206,33 @@ task_1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_1.dir\task_1.cpp.s
 .PHONY : task_1.cpp.s
 
+task_2.obj: task_2.cpp.obj
+
+.PHONY : task_2.obj
+
+# target to build an object file
+task_2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_2.dir\task_2.cpp.obj
+.PHONY : task_2.cpp.obj
+
+task_2.i: task_2.cpp.i
+
+.PHONY : task_2.i
+
+# target to preprocess a source file
+task_2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_2.dir\task_2.cpp.i
+.PHONY : task_2.cpp.i
+
+task_2.s: task_2.cpp.s
+
+.PHONY : task_2.s
+
+# target to generate assembly for a file
+task_2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_2.dir\task_2.cpp.s
+.PHONY : task_2.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -203,12 +243,16 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Working_with_Dates
 	@echo ... task_1
+	@echo ... task_2
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
 	@echo ... task_1.obj
 	@echo ... task_1.i
 	@echo ... task_1.s
+	@echo ... task_2.obj
+	@echo ... task_2.i
+	@echo ... task_2.s
 .PHONY : help
 
 

@@ -40,7 +40,7 @@ int main() {
                 time_end = std::time(nullptr);
                 delta_time = difftime(time_end,time_start);
                 current_task.task_name = user_discription;
-                current_task.task_time = delta_time;
+                current_task.task_time = delta_time / 3600;
                 tasks_list.push_back(current_task);
                 task_watchdog = false;
 
@@ -57,7 +57,7 @@ int main() {
             time_end = std::time(nullptr);
             delta_time = difftime(time_end,time_start);
             current_task.task_name = user_discription;
-            current_task.task_time = delta_time;
+            current_task.task_time = delta_time / 3600;
             tasks_list.push_back(current_task);
             task_watchdog = false;
         }
@@ -69,7 +69,7 @@ int main() {
             {
                 for(int i = 0; i < tasks_list.size(); i++)
                 {
-                    std::cout << tasks_list[i].task_name << " " << tasks_list[i].task_time << " seconds" << std::endl;
+                    std::cout << tasks_list[i].task_name << " " << tasks_list[i].task_time << " hours" << std::endl;
                 }
                 std::cout << std::endl;
             }
@@ -77,7 +77,7 @@ int main() {
             if(task_watchdog)
             {
                 std:: cout << "current task: " << user_discription << " "
-                    << difftime(std::time(nullptr),time_start) << std::endl;
+                    << difftime(std::time(nullptr),time_start) / 3600 << " hours" << std::endl;
             }
 
 
