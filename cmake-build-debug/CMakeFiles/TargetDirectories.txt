@@ -1,3 +1,0 @@
-C:/Users/info/CLionProjects/Working with Dates/cmake-build-debug/CMakeFiles/Working_with_Dates.dir
-C:/Users/info/CLionProjects/Working with Dates/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/info/CLionProjects/Working with Dates/cmake-build-debug/CMakeFiles/rebuild_cache.dir
