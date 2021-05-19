@@ -26,6 +26,7 @@ int main() {
     bool task_watchdog = false;
     double delta_time = 0;
     std::string user_input, user_discription;
+    double hour_divider = 3600.f;
 
 
     while (user_input != user_action.close_)
@@ -40,7 +41,7 @@ int main() {
                 time_end = std::time(nullptr);
                 delta_time = difftime(time_end,time_start);
                 current_task.task_name = user_discription;
-                current_task.task_time = delta_time / 3600;
+                current_task.task_time = delta_time / hour_divider;
                 tasks_list.push_back(current_task);
                 task_watchdog = false;
 
@@ -57,7 +58,7 @@ int main() {
             time_end = std::time(nullptr);
             delta_time = difftime(time_end,time_start);
             current_task.task_name = user_discription;
-            current_task.task_time = delta_time / 3600;
+            current_task.task_time = delta_time / hour_divider;
             tasks_list.push_back(current_task);
             task_watchdog = false;
         }
@@ -77,7 +78,7 @@ int main() {
             if(task_watchdog)
             {
                 std:: cout << "current task: " << user_discription << " "
-                    << difftime(std::time(nullptr),time_start) / 3600 << " hours" << std::endl;
+                    << difftime(std::time(nullptr),time_start) / hour_divider << " hours" << std::endl;
             }
 
 
