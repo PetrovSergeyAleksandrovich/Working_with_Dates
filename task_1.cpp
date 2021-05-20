@@ -11,7 +11,7 @@ public:
     std::string close_ = "close";
 };
 
-struct data_manager
+struct taskManager
 {
     std::string task_name = "none";
     double task_time = 0;
@@ -19,8 +19,8 @@ struct data_manager
 
 int main() {
 
-    std::vector<data_manager> tasks_list = {};
-    data_manager current_task;
+    std::vector<taskManager> tasks_list = {};
+    taskManager current_task;
     userAction user_action;
     std::time_t time_start, time_end;
     bool task_watchdog = false;
