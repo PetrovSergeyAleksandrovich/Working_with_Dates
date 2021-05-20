@@ -1,0 +1,6 @@
+C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-release-visual-studio/CMakeFiles/Working_with_Dates.dir
+C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-release-visual-studio/CMakeFiles/edit_cache.dir
+C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-release-visual-studio/CMakeFiles/task_1.dir
+C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-release-visual-studio/CMakeFiles/task_2.dir
+C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-release-visual-studio/CMakeFiles/task_2_v2.dir
+C:/Users/Poizone/CLionProjects/Working_with_Dates/cmake-build-release-visual-studio/CMakeFiles/rebuild_cache.dir
