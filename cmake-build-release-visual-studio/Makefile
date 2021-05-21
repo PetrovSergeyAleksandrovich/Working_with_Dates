@@ -165,6 +165,19 @@ task_2_v2\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_2_v2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_2_v2.dir\build
 .PHONY : task_2_v2\fast
 
+#=============================================================================
+# Target rules for targets named task_3
+
+# Build rule for target.
+task_3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) task_3
+.PHONY : task_3
+
+# fast build rule for target.
+task_3\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_3.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_3.dir\build
+.PHONY : task_3\fast
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -273,6 +286,33 @@ task_2_v2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_2_v2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_2_v2.dir\task_2_v2.cpp.s
 .PHONY : task_2_v2.cpp.s
 
+task_3.obj: task_3.cpp.obj
+
+.PHONY : task_3.obj
+
+# target to build an object file
+task_3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_3.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_3.dir\task_3.cpp.obj
+.PHONY : task_3.cpp.obj
+
+task_3.i: task_3.cpp.i
+
+.PHONY : task_3.i
+
+# target to preprocess a source file
+task_3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_3.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_3.dir\task_3.cpp.i
+.PHONY : task_3.cpp.i
+
+task_3.s: task_3.cpp.s
+
+.PHONY : task_3.s
+
+# target to generate assembly for a file
+task_3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\task_3.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\task_3.dir\task_3.cpp.s
+.PHONY : task_3.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -285,6 +325,7 @@ help:
 	@echo ... task_1
 	@echo ... task_2
 	@echo ... task_2_v2
+	@echo ... task_3
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
@@ -297,6 +338,9 @@ help:
 	@echo ... task_2_v2.obj
 	@echo ... task_2_v2.i
 	@echo ... task_2_v2.s
+	@echo ... task_3.obj
+	@echo ... task_3.i
+	@echo ... task_3.s
 .PHONY : help
 
 

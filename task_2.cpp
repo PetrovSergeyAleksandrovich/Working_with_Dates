@@ -6,15 +6,16 @@
 struct bDay
 {
     std::string name = "none";
-    int year;
-    int month;
-    int day;
+    int year = 0;
+    int month = 0;
+    int day = 0;
 };
 
 int main()
 {
     std::vector<bDay> list = {};
     bDay user_input_date;
+    bDay nearest_bday;
     std::time_t user_time_input = std::time(nullptr);
     std::tm* local = std::localtime(&user_time_input);
     std::string user_input;
@@ -35,15 +36,28 @@ int main()
         list.push_back(user_input_date);
     }
 
+    // search for any first future bday in the list to initialise search
     std::time_t current_date = std::time(nullptr);
     std::tm* current_date_local = std::localtime(&current_date);
 
-    std::cout << "\nLIST of future BDays:\n";
+    for(int i = 0; i < list.size(); i++)
+    {
+        if(list[i].month > current_date_local->tm_mon)
+        {
+            nearest_bday = list[i];
+            break;
+        }
+        else if (list[i].month == current_date_local->tm_mon)
+        {
+            if(list[i].day > current_date_local->tm_mday)
+            {
+                nearest_bday = list[i];
+                break;
+            }
+        }
+    }
 
-    int delta_days = current_date_local->tm_mday - list[0].day;
-    int delta_months = current_date_local->tm_mon - list[0].month;
-    std::string closest_bday = list[0].name;
-
+    // search for nearest b-day and bday for today
     for(int i = 0; i < list.size(); i++)
     {
 
@@ -52,48 +66,39 @@ int main()
 
         if(list[i].month == current_date_local->tm_mon && list[i].day == current_date_local->tm_mday)
         {
-            std::cout << "Happy Birthday TODAY to " << list[i].name << std::endl;
+            std::cout << "\n~Happy Birthday TODAY to :" << list[i].name << std::endl;
+            continue;
         }
 
         // search for nearest b-day
-        if(current_date_local->tm_mon - list[i].month < delta_months)
+        if(list[i].month < nearest_bday.month)
         {
-            closest_bday = list[i].name;
-            delta_months = current_date_local->tm_mon - list[i].month;
+            nearest_bday = list[i];
         }
-        else if (current_date_local->tm_mon - list[i].month == delta_months)
+        else if (list[i].month == nearest_bday.month)
         {
-            if(current_date_local->tm_mday - list[i].day < delta_days)
+            if(list[i].day < nearest_bday.day)
             {
-                closest_bday = list[i].name;
-                delta_days = current_date_local->tm_mday - list[i].day;
+                nearest_bday = list[i];
             }
         }
-
     }
 
-    //print nearest b-day for one or more people
+    //Printing results
+    if(nearest_bday.name != "none")
+    {
+        std::cout << "Nearest bdays:\n" << nearest_bday.name << " "
+                  << nearest_bday.day << " " << nearest_bday.month+1 << std::endl;
+    }
+    //print nearest b-day for one or more people if exists in the list for the nearest day
     for(int i = 0; i < list.size(); i++)
     {
-        int tmp_day = 0;
-        int tmp_month = 0;
-
-        if(list[i].name == closest_bday)
+        if(list[i].day == nearest_bday.day && list[i].month == nearest_bday.month && list[i].name != nearest_bday.name)
         {
-            std::cout << "Nearest bday: " << list[i].name << " " << list[i].day << " " << list[i].month << std::endl;
-            tmp_day = list[i].day;
-            tmp_month = list[i].month;
-            for(int j = 0; j < list.size(); j++)
-            {
-                if(list[j].day == tmp_day && list[j].month == tmp_month && list[j].name != closest_bday)
-                {
-                    std::cout << "Nearest bday: " << list[i].name << " " << list[i].day << " " << list[i].month << std::endl;
-                }
-
-            }
+            std::cout << list[i].name << " "
+            << list[i].day << " " << list[i].month+1 << std::endl;
         }
     }
-
 
     return 0;
 }
