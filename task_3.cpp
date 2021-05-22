@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
+#include <Windows.h>
 
 int main()
 {
@@ -22,12 +23,13 @@ int main()
     while(true)
     {
         time = std::time(nullptr);
-        if(timer_finish - time <= 0)
+        if(timer_finish <= time)
         {
             std::cout << "ding!" << std::endl;
             break;
         }
         std::cout << timer_finish - time << " seconds left" << std::endl;
+        Sleep(1000);
     }
 
     return 0;
